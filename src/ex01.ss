@@ -1,3 +1,8 @@
+(define (atom? x)
+  (and (not (null? x))
+              (not (pair? x))))
+
+
 ;; hello world
 (define (hello)
   (display "hello world")
@@ -58,9 +63,56 @@
    (else z)))
 
 
+(define (add1 n)
+  (+ n 1))
 
 
 
+(define (occur x lat)
+  (cond
+   ((null? lat) 0)
+   ((eq? (car lat) x) 
+    (add1 (occur x (cdr lat))))
+   (else
+    (occur x (cdr lat)))))
+
+
+;(define length
+;  (lambda (L)
+;    (define length1
+;      (lambda (L n)
+;	(if (null? L)
+;	    n
+;	    (length1 (tail L) (+ n 1)))))
+;    (length1 L 0)))
+
+    
+
+(define (length lat)
+  (define (length1 n lat)
+    (cond
+     ((null? lat) n)
+     (else
+      (length1 (+ n 1) (cdr lat)))))
+  (length1 0 lat))
+
+(define (sum lat)
+  (define (sum1 n lat)
+    (cond
+     ((null? lat) n)
+     (else (sum1 (+ n (car lat)) (cdr lat)))))
+  (cond
+   ((null? lat) 0)
+   (else
+    (sum1 0 lat))))
+
+
+
+
+     
+
+    
+	
 
 
      
