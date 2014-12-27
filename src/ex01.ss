@@ -1,3 +1,21 @@
+(define (flatten lat)
+  (cond
+   ((null? lat) '())
+   ((pair? (car lat))
+    (cons (flatten (car lat)) (flatten (cdr lat))))
+   (else
+    (cons (car lat) (flatten (cdr lat))))))
+
+
+(define (getfirst lat)
+  (cond
+   ((null? lat) '())
+   ((pair? (car lat)) (getfirst (car lat)))
+   (else
+    (cons (car lat) '()))))
+
+
+
 (define (atom? x)
   (and (not (null? x))
               (not (pair? x))))
@@ -106,13 +124,18 @@
    (else
     (sum1 0 lat))))
 
+(define (test a)
+  (cond
+   ((= a 10)
+    (display "hello world")
+    (display "hello world")
+    )
+   (else
+    (display "newline")
+    (display "newline"))))
 
 
 
-     
-
-    
-	
 
 
      
