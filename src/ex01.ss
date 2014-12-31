@@ -1,3 +1,31 @@
+
+
+(define even?
+  (lambda (a)
+    (cond ((= (modulo a 2) 0) #t)
+	  (else
+	   #f))))
+
+(define (myfilter func lat)
+  (cond
+   ((null? lat ) '())
+   ((even? (car lat))
+	   (cons (car lat) (myfilter func (cdr lat))))
+    (else
+     (myfilter func (cdr lat)))))
+
+(define 2*
+  (lambda (a)
+    (* 2 a)))
+
+(define (mymap func lat)
+  (cond
+   ((null? lat) '())
+   (else
+    (cons (func (car lat)) (mymap func (cdr lat))))))
+
+
+
 (define (flatten lat)
   (cond
    ((null? lat) '())
