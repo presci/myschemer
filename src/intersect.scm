@@ -10,3 +10,6 @@
       (cond
        ((null? lset) '())
        (else (A lset))))))
+
+
+

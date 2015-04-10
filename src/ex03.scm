@@ -36,9 +36,14 @@
   (lambda (lat)
     (letrec (( di (lambda (lat)
 		  (display lat))))
-    (di (cdr lat)))))
+      (di (cdr lat)))))
 
 
+(define bako001
+  (lambda (lat)
+    (letrec ((di (lambda (lat)
+		   (display lat))))
+      (di (cdr lat)))))
 
 (define ribbon03
   (lambda (lat)
