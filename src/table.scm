@@ -41,6 +41,15 @@
 		      (r0 (cdr lat) (cons (rowgen-2 (car lat) a) q)))))))
        r0) lat '())))
 
+
+
+
+
+
+
+
+
+
 (define zero-0  (lambda (acc a)  (cond  ((<= a 0) acc) (else  (zero-0 (cons 0 acc) (- a 1))))))
 
 
